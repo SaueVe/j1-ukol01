@@ -27,7 +27,7 @@ public class HlavniProgram {
 
     nakresliSlunce();
 */
-    posun(100,-130);
+    posun(100,-100);
 
     nakresliPrasatko();
 
@@ -35,14 +35,14 @@ public class HlavniProgram {
 
     nakresliDomecek();
 
-    posun(-80,200);
+    posun(-80,180);
 
     for(int i = 0; i < 5; i++) {
       nakresliDomecek();
       posun(-200,0);
     }
 
-    posun(120,-200);
+    posun(120,-180);
 
     nakresliDomecek();
 
@@ -50,6 +50,13 @@ public class HlavniProgram {
 
     nakresliSlunce();
 
+    posun(-100, -500);
+
+    nakresliV();
+    nakresliE();
+    nakresliR();
+    nakresliC();
+    nakresliA();
   }
 
   public void nakresliDomecek() {
@@ -145,6 +152,7 @@ public class HlavniProgram {
     }
     zofka.turnRight(90);
   }
+
   public void posun(int x, int y){
     zofka.penUp();
     zofka.turnRight(90);
@@ -152,7 +160,78 @@ public class HlavniProgram {
     zofka.turnLeft(90);
     zofka.move(y);
     zofka.penDown();
-
   }
 
+  public void nakresliV(){
+    posun(0,100);
+    zofka.turnRight(160);
+    zofka.move(106);
+    zofka.turnLeft(140);
+    zofka.move(106);
+    zofka.turnLeft(20);
+    posun(55,-100);
+  }
+
+  public void nakresliE(){
+    zofka.move(100);
+    zofka.turnRight(90);
+    zofka.move(50);
+    posun(50,-50);
+    zofka.move(40);
+    posun(50,-40);
+    zofka.move(50);
+    zofka.turnLeft(90);
+    posun(55,0);
+  }
+
+  public void nakresliR(){
+    zofka.move(100);
+    zofka.turnRight(90);
+    zofka.move(15);
+    for(int i = 0; i < 90; i++){
+      zofka.move(1);
+      zofka.turnRight(2);
+    }
+    zofka.move(15);
+    zofka.turnLeft(135);
+    zofka.move(61);
+    zofka.turnLeft(135);
+    posun(55,0);
+  }
+
+  public void nakresliC(){
+    posun(50,67);
+    zofka.move(3);
+    for(int i = 0; i < 90; i++){
+      zofka.move(1);
+      zofka.turnLeft(2);
+    }
+    zofka.move(43);
+    for(int i = 0; i < 90; i++){
+      zofka.move(1);
+      zofka.turnLeft(2);
+    }
+    zofka.move(3);
+    posun(-43,100);
+
+    zofka.turnRight(135);
+    zofka.move(20);
+    zofka.turnLeft(90);
+    zofka.move(20);
+    zofka.turnLeft(45);
+    posun(60,-130);
+  }
+
+  public void nakresliA(){
+    zofka.turnRight(20);
+    zofka.move(106);
+    zofka.turnRight(140);
+    zofka.move(106);
+    zofka.turnLeft(160);
+    posun(-55,40);
+    zofka.turnRight(90);
+    zofka.move(40);
+    zofka.turnLeft(90);
+    posun(70,-40);
+  }
 }
